@@ -7,47 +7,49 @@
   <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet" />
   <link href="/css/style.css" rel="stylesheet">
 </head>
-<body>
-  <div class="px-5">
-
-    <!-- 가장 먼저 대제목. 이 안에 로고이미지 -->
-    <h1 class="w-[230px] mx-auto mt-[70px] lg:mt-[100px]" >
-      <a href="/" class="logo-link">
+<body class="font-suit text-black">
+  <div class="px-5 md:w-[500px] mx-auto">
+    <h1 class="w-[230px] mx-auto mt-[70px] md:mt-[100px]">
+      <a href="/" class="">
         <picture>
-          <source srcset="./../assets/images/naver.svg" type="image/svg" />
-          <img class="w-full" src="./../assets/images/naver.png" alt="네이버" />
+          <source srcset="/assets/images/naver.svg" /> 
+          <img class="" src="/assets/images/naver.png" alt="네이버"/>
         </picture>
       </a>
     </h1>
 
-    <form action="/" class="mt-11 lg:mt-12 space-y-3">
-      <!-- id 입력 서식 -->
-      <div class="">
+    <form action="/" class="mt-11 md:mt-12 flex flex-col gap-6">
+      <div class="relative">
         <label for="userEmail" class="sr-only">아이디</label>
-        <input class="px-3 border border-solid border-silverDark w-full h-11 bg-white focus:border-naverGreen focus:bg-gray" type="text" id="userEmail" name="userEmail" required placeholder="아이디"/>
+        <input class="euid-input peer" type="email" id="userEmail" name="userEmail" required placeholder="아이디"/>
+        <span class="absolute text-xs hidden peer-invalid:block text-warning">아이디는 이메일 형식이어야 합니다.</span>
       </div>
-      <!-- 패스워드 입력 서식 -->
       <div class="">
         <label for="userPw" class="sr-only">비밀번호</label>
-        <input class="px-3 border border-solid border-silverDark w-full h-11 bg-white focus:border-naverGreen focus:bg-gray" type="text" id="userPw" name="userPw" required placeholder="비밀번호"/>
+        <input class="euid-input peer" type="password" id="userPw" name="userPw" required placeholder="비밀번호"/>
+      </div>
+      <div class="order-1 flex flex-row justify-between">
+        <div class="relative">
+          <input class="peer absolute w-6 h-6 appearance-none outline-none focus:ring-2 focus:ring-primary rounded-sm" type="checkbox" id="saveLogin" name="saveLogin" />
+          <label for="saveLogin" class="peer-checked:bg-[url('/assets/icons/checked.svg')] inline-block h-6 bg-[url('/assets/icons/unchecked.svg')] bg-no-repeat pl-7">로그인 상태 유지</label>
+        </div>
+  
+        <div class="flex flex-row gap-2">
+          <a href="/" class="outline-none focus:ring-2 focus:ring-primary rounded-sm" target="_blank" rel="noopener noreferrer">IP 보안</a>
+    
+          <!-- 스위치(텍스트) 컴포넌트 -->
+          <!-- input 요소를 absolute로 배치하기 위한 기준 컨테이너로 지정 / ON,OFF 글자 길이에 따라 상자 크기가 변하지 않도록 가로 크기를 32px로 지정 -->
+          <div class="relative">
+            <!-- 레이블의 형제 요소로 처리하기 위해 peer 클래스 추가 필요 / 기본 스타일 제거 / 절대위치 배치 / 가로, 세로 크기는 부모 크기와 동일하게 지정 / 폼 플러그인 사용 시 글자색, 테두리색, 배경색을 투명으로 지정해야 함. checked 상태에서 제공되는 플러그인 이미지도 제거하기 위해 checked:bg-none 필요함. -->
+            <input type="checkbox" id="ipSecurity" name="ipSecurity" class="peer outline-none focus:ring-2 focus:ring-primary rounded-sm absolute w-full h-full appearance-none" />
+            <!-- 글자 굵기 bold / after 가상요소 선택자로 'OFF' 정보 제공 / 형제 요소인 peer 클래스가 지정된 input 요소가 chedked 상태가 되면 after 가상요소 선택자로 추가한 텍스트를 'ON'으로 변경하고 글자색상은 primary로 지정  -->
+            <label for="ipSecurity" class="w-8 block text-gray-20 peer-checked:text-primary font-bold after:content-['OFF'] peer-checked:after:content-['ON']"><span class="sr-only">IP 보안</span></label>
+          </div>
+        </div>
       </div>
 
-      <!-- 체크박스 컴포넌트 -->
-      <div class="relative">
-        <input type="checkbox" id="saveLogin" name="saveLogin" class="absolute peer checkbox w-6 h-6 appearance-none" checked />
-        <label for="saveLogin" class="peer-checked:bg-[url('/assets/icons/checked.svg')] pl-7 bg-no-repeat inline-block h-6 bg-[url('/assets/icons/unchecked.svg')]">로그인 상태 유지</label>
-      </div>
-
-      <!-- IP 컴포넌트 -->
-      <div class="relative">
-        <label for="ipSecurity" class="ipPeer-checked:after:content-['ON'] after:content-['OFF'] bg-yellow-200 inline-block h-6">IP 보안</label>
-        <input type="checkbox" id="ipSecurity" name="ipSecurity" class="ipPeer absolute checkbox w-6 h-6" checked />
-      </div>
-
-      
-
+      <button type="button" class="w-full h-11 bg-primary text-white rounded-sm focus:ring-2 focus:ring-warning outline-none">로그인</button>
     </form>
-
   </div>
 </body>
 </html>
