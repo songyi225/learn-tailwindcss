@@ -22,45 +22,51 @@
 
   <hr />
 
-  <div class="hidden">
+  <!-- 플렉스(row) / X 축으로 아이템이 겹치도록 설정(space-*) -->
+  <div class="flex flex-row -space-x-4">
+    <!-- 기준 컨테이너 / 가로, 세로 80px -->
     <figure class="">
-      <a href="/" class=""
-        ><img class="" src="/assets/faces/face1.jpg" alt=""
+      <!-- 그룹으로 지정 (!중요 포인트) / 기본 아웃라인 제거-->
+      <a href="/" class="group outline-none">
+        <!-- z-index 조절을 위한 relative 선언 -->
+        <!-- 라운딩 처리 테두리 선 1px / 테두리 선 색상 gray-20 -->
+        <!-- hover나 focus 시 group-*를 활용하여 테두리 선 두께 및 색상 변경 (primary) -->
+        <img class="relative blur group-hover:blur-none group-focus:blur-none group-hover:z-10 group-focus:z-10 group-hover:border-primary group-focus:border-primary rounded-full border border-gray-20" src="/assets/faces/face1.jpg" alt=""
       /></a>
     </figure>
     <figure class=" ">
-      <a href="/" class=""
-        ><img class="" src="/assets/faces/face2.jpg" alt=""
+      <a href="/" class="group outline-none"
+        ><img class="relative blur group-hover:blur-none group-focus:blur-none group-hover:z-10 group-focus:z-10 group-hover:z-1 group-hover:border-primary group-focus:border-primary rounded-full border border-gray-20" src="/assets/faces/face2.jpg" alt=""
       /></a>
     </figure>
     <figure class=" ">
-      <a href="/" class=""
-        ><img class="" src="/assets/faces/face3.jpg" alt=""
+      <a href="/" class="group outline-none"
+        ><img class="relative blur group-hover:blur-none group-focus:blur-none group-hover:z-10 group-focus:z-10 group-hover:border-primary group-focus:border-primary rounded-full border border-gray-20" src="/assets/faces/face3.jpg" alt=""
       /></a>
     </figure>
     <figure class=" ">
-      <a href="/" class=""
-        ><img class="" src="/assets/faces/face4.jpg" alt=""
+      <a href="/" class="group outline-none"
+        ><img class="relative blur group-hover:blur-none group-focus:blur-none group-hover:z-10 group-focus:z-10 group-hover:border-primary group-focus:border-primary rounded-full border border-gray-20" src="/assets/faces/face4.jpg" alt=""
       /></a>
     </figure>
     <figure class="">
-      <a href="/" class=""
-        ><img class="" src="/assets/faces/face5.jpg" alt=""
+      <a href="/" class="group outline-none"
+        ><img class="relative blur group-hover:blur-none group-focus:blur-none group-hover:z-10 group-focus:z-10 group-hover:border-primary group-focus:border-primary rounded-full border border-gray-20" src="/assets/faces/face5.jpg" alt=""
       /></a>
     </figure>
     <figure class=" ">
-      <a href="/" class=""
-        ><img class="" src="/assets/faces/face6.jpg" alt=""
+      <a href="/" class="group outline-none"
+        ><img class="relative blur group-hover:blur-none group-focus:blur-none group-hover:z-10 group-focus:z-10 group-hover:border-primary group-focus:border-primary rounded-full border border-gray-20" src="/assets/faces/face6.jpg" alt=""
       /></a>
     </figure>
     <figure class=" ">
-      <a href="/" class=""
-        ><img class="" src="/assets/faces/face7.jpg" alt=""
+      <a href="/" class="group outline-none"
+        ><img class="relative blur group-hover:blur-none group-focus:blur-none group-hover:z-10 group-focus:z-10 group-hover:border-primary group-focus:border-primary rounded-full border border-gray-20" src="/assets/faces/face7.jpg" alt=""
       /></a>
     </figure>
     <figure class=" ">
-      <a href="/" class=""
-        ><img class="" src="/assets/faces/face8.jpg" alt=""
+      <a href="/" class="group outline-none"
+        ><img class="relative blur group-hover:blur-none group-focus:blur-none group-hover:z-10 group-focus:-z-10 group-hover:border-primary group-focus:border-primary rounded-full border border-gray-20" src="/assets/faces/face8.jpg" alt=""
       /></a>
     </figure>
   </div>
